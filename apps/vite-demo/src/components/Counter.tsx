@@ -1,13 +1,16 @@
-import * as React from "react";
+import { useState } from "react";
 
-interface CounterProps {}
-
-export const Counter: React.FC<CounterProps> = () => {
-  const [count, setCount] = React.useState(0);
+export function Counter(): JSX.Element {
+  const [count, setCount] = useState(0);
 
   return (
-    <button onClick={() => setCount((count) => count + 1)}>
-      count is {count}
+    <button
+      onClick={() => {
+        setCount((c) => c + 1);
+      }}
+      type="button"
+    >
+      Count is {count}
     </button>
   );
-};
+}
